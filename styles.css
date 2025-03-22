@@ -1,0 +1,486 @@
+/* 基础设置 */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --text-color: #333;
+  --border-radius: 5px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/* 容器 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.logo a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-color);
+  margin: 5px;
+  transition: var(--transition);
+}
+
+/* 英雄区 */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  background: linear-gradient(
+      135deg,
+      rgba(52, 152, 219, 0.8),
+      rgba(44, 62, 80, 0.8)
+    ),
+    url('https://source.unsplash.com/random/1920x1080/?technology') center/cover
+      no-repeat;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .highlight {
+  color: #fff;
+  position: relative;
+  padding: 0 10px;
+}
+
+.hero .highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background-color: var(--accent-color);
+  z-index: -1;
+  transform: rotate(-2deg);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: 15px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* 章节样式 */
+section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 关于我们 */
+.about-section {
+  background-color: var(--light-color);
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.about-stats {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.stat-item i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+/* 服务 */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* 联系我们 */
+.contact-section {
+  background-color: var(--light-color);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  background-color: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* 页脚 */
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-logo,
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 30px;
+}
+
+.footer-logo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-links h4::after,
+.footer-social h4::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 0;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background-color: white;
+    height: calc(100vh - 70px);
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: var(--transition);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
